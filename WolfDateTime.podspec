@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name             = 'WolfDateTime'
     s.version          = '1.0.0'
-    s.summary          = 'A framework of structures for dealing with local dates and times (i.e., dates and times apart from time zones) and their converstion to UTC Date-times.'
+    s.summary          = 'A framework of structures for dealing with local dates and times.'
 
     # s.description      = <<-DESC
     # TODO: Add long description of the pod here.
