@@ -110,3 +110,16 @@ extension LocalTime: ExpressibleByStringLiteral {
         try! self.init(stringLiteral)
     }
 }
+
+extension LocalTime {
+    public func localizedString(locale: Locale = .current, style: DateFormatter.Style = .short) -> String {
+        let formatter = DateFormatter() • {
+            $0.locale = locale
+            $0.dateStyle = .none
+            $0.timeStyle = style
+            $0.timeZone = Foundation.TimeZone(secondsFromGMT: 0)
+            $0.defaultDate = Date(timeIntervalSinceReferenceDate: 0)
+        }
+        return formatter.string(from: date)
+    }
+}

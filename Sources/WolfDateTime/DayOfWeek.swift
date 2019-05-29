@@ -32,6 +32,25 @@ public enum DayOfWeek: String, Codable {
             return nil
         }
     }
+    
+    public var dayNumber: Int {
+        switch self {
+        case .sunday:
+            return 1
+        case .monday:
+            return 2
+        case .tuesday:
+            return 3
+        case .wednesday:
+            return 4
+        case .thursday:
+            return 5
+        case .friday:
+            return 6
+        case .saturday:
+            return 7
+        }
+    }
 
     public var next: DayOfWeek {
         switch self {
@@ -49,6 +68,29 @@ public enum DayOfWeek: String, Codable {
             return .saturday
         case .saturday:
             return .sunday
+        }
+    }
+}
+
+extension Calendar {
+    public var firstDayOfWeek: DayOfWeek {
+        switch firstWeekday {
+        case 1:
+            return .sunday
+        case 2:
+            return .monday
+        case 3:
+            return .tuesday
+        case 4:
+            return .wednesday
+        case 5:
+            return .thursday
+        case 6:
+            return .friday
+        case 7:
+            return .saturday
+        default:
+            fatalError()
         }
     }
 }

@@ -15,3 +15,13 @@ extension LocalDateSpan: Equatable {
         return lhs.start == rhs.start && lhs.end == rhs.end
     }
 }
+
+extension LocalDateSpan {
+    public func localizedString(style: DateFormatter.Style = .short, rangeSeparator: String = "–") -> String? {
+        let startString = start?.localizedString(style: style) ?? ""
+        let endString = end?.localizedString(style: style) ?? ""
+        guard startString != endString else { return startString }
+        guard !startString.isEmpty || !endString.isEmpty else { return nil }
+        return [startString, rangeSeparator, endString].compactMap({ $0 }).joined()
+    }
+}

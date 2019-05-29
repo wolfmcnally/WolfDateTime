@@ -1,4 +1,5 @@
 import Foundation
+import WolfCore
 
 public struct LocalDate: Codable {
     private typealias `Self` = LocalDate
@@ -92,5 +93,17 @@ extension LocalDate: Comparable {
 extension LocalDate: ExpressibleByStringLiteral {
     public init(stringLiteral: String) {
         try! self.init(stringLiteral)
+    }
+}
+
+extension LocalDate {
+    public func localizedString(locale: Locale = .current, style: DateFormatter.Style = .short) -> String {
+        let formatter = DateFormatter() • {
+            $0.locale = locale
+            $0.dateStyle = style
+            $0.timeStyle = .none
+            $0.timeZone = Foundation.TimeZone(secondsFromGMT: 0)
+        }
+        return formatter.string(from: date)
     }
 }
