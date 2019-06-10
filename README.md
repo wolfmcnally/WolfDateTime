@@ -9,10 +9,6 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
-Swift 4.2
-
 ## Installation
 
 WolfDateTime is available through [CocoaPods](https://cocoapods.org). To install
