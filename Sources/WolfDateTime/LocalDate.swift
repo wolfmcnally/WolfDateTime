@@ -107,3 +107,17 @@ extension LocalDate {
         return formatter.string(from: date)
     }
 }
+
+extension LocalDate: Strideable {
+    public func advanced(by n: Int) -> LocalDate {
+        return adding(days: n)
+    }
+
+    public func distance(to other: LocalDate) -> Int {
+        let start = self.date.timeIntervalSinceReferenceDate
+        let end = other.date.timeIntervalSinceReferenceDate
+        let timeInterval = end - start
+        let days = timeInterval / oneDay
+        return Int(days)
+    }
+}

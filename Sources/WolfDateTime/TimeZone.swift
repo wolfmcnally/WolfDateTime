@@ -45,3 +45,9 @@ extension TimeZone: CustomStringConvertible {
         return foundationTimeZone.description
     }
 }
+
+extension TimeZone: Equatable {
+    public static func == (lhs: TimeZone, rhs: TimeZone) -> Bool {
+        return lhs.foundationTimeZone == rhs.foundationTimeZone
+    }
+}
