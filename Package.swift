@@ -13,7 +13,7 @@ let package = Package(
         ],
     dependencies: [
         .package(url: "https://github.com/wolfmcnally/WolfCore", .branch("Swift-5.1")),
-        // .package(url: "https://github.com/wolfmcnally/WolfCore", from: "4.0.0"),
+        // .package(url: "https://github.com/wolfmcnally/WolfCore", from: "5.0.0"),
     ],
     targets: [
         .target(
