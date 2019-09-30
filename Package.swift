@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "WolfDateTime",
     platforms: [
-        .macOS(.v10_13)
+        .iOS(.v9), .macOS(.v10_13)
     ],
     products: [
         .library(
